@@ -14,9 +14,24 @@
   </head>
 
   <body>
-
-    <h1>SUCESSO</h1>
-
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default"> 
+          <div class="panel-heading">
+            <h3 class="panel-title">Salvo com sucesso: <b>
+              {{$cadastro->sexo == 'Masculino' ? 'Brinde não validado! Disponível somente para o sexo feminino' 
+                : 'Brinde validado com sucesso!'}}.</b></h3>
+          </div>
+          <div class="panel-body">
+            <p>{{$cadastro->sexo == 'Masculino' ? 
+                'Em caso de dúvida entre em contato com APAE Londrina/PR' 
+                : 'O brinde estará na sua mesa na data do evento.'}}.</p>
+            <p>APAE Londrina/PR</p>
+            <p>Tel: (43) 3305-5924</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

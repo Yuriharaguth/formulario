@@ -8,5 +8,4 @@ class cadastro extends Model
 {
     protected $fillable = ['nome', 'email', 'telefone', 'mesa', 'convite', 'sexo', 'calcado'];
 
-
 }

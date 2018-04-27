@@ -39,7 +39,7 @@ class CadastroController extends Controller
                 return view('erro'); // CONVITE JA CADASTRADO
             }
             $cadastro = cadastro::create($request->all());
-            return view('sucesso');
+            return view('sucesso', compact('cadastro'));
         }
 
     }
