@@ -21,26 +21,16 @@ class CadastroController extends Controller
 
     public function store(CadastroRequest $request)
     {
-        $convite = DB::table('convites')
-            ->where('numero', $request->input('convite'))
-            ->where('mesa', $request->input('mesa'))
-            ->first();
-        if(!$convite){
-            return redirect()
-                ->back()
-                ->with('message','Convite Inválido.')
-                ->withInput();
-        } else {
             $user = DB::table('cadastros')
                 ->where('convite', $request->input('convite'))
                 ->where('mesa', $request->input('mesa'))
                 ->first();
             if ($user) {
-                return view('erro'); // CONVITE JA CADASTRADO
+                return view('erro');
             }
             $cadastro = cadastro::create($request->all());
             return view('sucesso', compact('cadastro'));
-        }
+
 
     }
 
